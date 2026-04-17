@@ -1,3 +1,13 @@
+
+function BookingForm(){
+  return(
+    <p>BookingForm.jsx</p>
+  )
+}
+
+export default BookingForm;
+{/*}
+
 function BookingForm({ availableTimes, dispatch }) {
     const handleDateChange = (e) => {
         const selectedDate = e.target.value;
@@ -19,7 +29,7 @@ function BookingForm({ availableTimes, dispatch }) {
 
 export default BookingForm;
 
-
+*/}
 {/*
     
 import React, { useState } from 'react';

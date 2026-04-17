@@ -1,45 +1,26 @@
 
-{/*
-    import { StrictMode } from 'react'
+
+{/*}
+import { createContext, useState, useContext } from 'react';
+import App from './App.jsx';
 import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
+<App title="My React App" userCount={10} />
 )
 */}
 
+// src/main.jsx
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import { UserProvider } from './context/UserContext'; // Import Provider
 
-
-import React, { useReducer } from 'react';
-
-// 1. Initial State
-const initialState = { availableTimes: ["17:00", "18:00", "19:00"] };
-
-// 2. Reducer Function
-function updateTimes(state, action) {
-    switch (action.type) {
-        case 'UPDATE_TIMES':
-            // Logic to return new available times based on selected date
-            return { ...state, availableTimes: ["20:00", "21:00"] };
-        default:
-            return state;
-    }
-}
-
-function Main() {
-    // 3. Initialize useReducer
-    const [state, dispatch] = useReducer(updateTimes, initialState);
-
-    return (
-        <BookingForm 
-            availableTimes={state.availableTimes}
-            dispatch={dispatch} 
-        />
-    );
-}
-export default Main;
-
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <UserProvider>
+      <App />
+    </UserProvider>
+  </React.StrictMode>
+);
