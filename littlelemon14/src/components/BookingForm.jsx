@@ -1,4 +1,66 @@
 
+
+// src/components/FormPage.jsx
+import { useState } from 'react';
+import { useUser } from '../context/BookingContext'; // Import custom hook
+
+const BookingForm = () => {
+  // Access the context
+  const { user, updateBooking } = useUser();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [date, setDate] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Update the context value
+    updateBooking(name, email, phone, date);
+  };
+
+  return (
+    <div style={{ border: '1px solid black', padding: '20px' }}>
+      <h3>Nested FormPage Component</h3>
+      <p>Current Context User:</p> 
+        <p>{user.name}</p> 
+        <p>{user.email}</p>
+        <p>{user.phone}</p>
+        <p>{user.date}</p>
+        <hr/>
+      <form onSubmit={handleSubmit}>
+        <input 
+          type="text" 
+          placeholder="Name" 
+          value={name} 
+          onChange={(e) => setName(e.target.value)} 
+        />
+        <input 
+          type="email" 
+          placeholder="Email" 
+          value={email} 
+          onChange={(e) => setEmail(e.target.value)} 
+        />
+         <input 
+          type="text" 
+          placeholder="Phone" 
+          value={phone} 
+          onChange={(e) => setPhone(e.target.value)} 
+        />
+         <input 
+          type="text" 
+          placeholder="Date" 
+          value={date} 
+          onChange={(e) => setDate(e.target.value)} 
+        />                
+        <button type="submit">Update Booking</button>
+      </form>
+    </div>
+  );
+};
+
+export default BookingForm;
+
+{/*
 function BookingForm(){
   return(
     <p>BookingForm.jsx</p>
@@ -6,6 +68,8 @@ function BookingForm(){
 }
 
 export default BookingForm;
+*/}
+
 {/*}
 
 function BookingForm({ availableTimes, dispatch }) {

@@ -8,12 +8,12 @@ const BookingContext = createContext();
 export const useUser = () => useContext(BookingContext);
 
 // 3. Provider Component
-export const UserProvider = ({ children }) => {
-  const [user, setUser] = useState({ name: '', email: '' });
+export const BookingProvider = ({ children }) => {
+  const [user, setUser] = useState({ name: '', email: '', phone: '', date: '' });
 
   // Function to update user values
-  const updateBooking = (name, email) => {
-    setUser({ name, email });
+  const updateBooking = (name, email, phone, date) => {
+    setUser({ name, email, phone, date });
   };
 
   return (
