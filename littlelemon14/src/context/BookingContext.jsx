@@ -9,17 +9,16 @@ export const useUser = () => useContext(BookingContext);
 
 // 3. Provider Component
 export const BookingProvider = ({ children }) => {
-  const [user, setUser] = useState({ name: '', email: '', phone: '', date: '', time: ''});
+  const [user, setUser] = useState({ name: '', email: '', phone: '', date: '', time: '', guests: ''});
 
   // Function to update user values
-  const updateBooking = (name, email, phone, date, time) => {
-    setUser({ name, email, phone, date, time });
+  const updateBooking = (name, email, phone, date, time, guests) => {
+    setUser({ name, email, phone, date, time, guests });
   };
 
   return (
     // Pass both the state and the updater function
     <BookingContext.Provider value={{ user, updateBooking }}>
-      <p>BookingContext.jsx</p>
       {children}
     </BookingContext.Provider>
   );

@@ -3,7 +3,7 @@ import BookingPage from './components/BookingPage';
 function App({ title, userCount }) {
   return(
     <>
-      <FormPage/>
+     {/* <FormPage/> */}
       <BookingPage/>
     </>
   ) 

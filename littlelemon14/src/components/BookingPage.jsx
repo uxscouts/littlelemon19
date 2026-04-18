@@ -1,12 +1,64 @@
+import React, { useReducer, useEffect } from 'react';
 import BookingForm from './BookingForm';
+import { fetchAPI } from '../API'; // Ensure this matches your project's API file
 
-function BookingPage(){
- return(
-    <BookingForm/>
- )
+// 1. Define the reducer function
+export const updateTimes = (state, action) => {
+    switch (action.type) {
+        case 'UPDATE_TIMES':
+            // Returns new times based on the date dispatched from the form
+            return fetchAPI(new Date(action.payload));
+        default:
+            return state;
+    }
+};
+
+// 2. Define initial state function
+export const initializeTimes = () => {
+    const today = new Date();
+    return fetchAPI(today);
+};
+
+function BookingPage() {
+    // 3. Setup useReducer
+    const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes);
+
+    return (
+        <main>
+            <h1>Reserve a Table</h1>
+            {/* 4. Pass state and dispatch as props */}
+            <BookingForm 
+                availableTimes={availableTimes} 
+                dispatch={dispatch} 
+            />
+        </main>
+    );
 }
 
 export default BookingPage;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 {/*
 
