@@ -6,9 +6,13 @@ import { fetchAPI } from '../API';
 // 1. Define the reducer function
 export const updateTimes = (state, action) => {
     switch (action.type) {
-        case 'UPDATE_TIMES':
-            // Returns new times based on the date dispatched from the form
-            return fetchAPI(new Date(action.payload));
+        case 'UPDATE_TIMES': {
+            const selectedDate = new Date(action.payload);
+            if (isNaN(selectedDate.getTime())) {
+                return state;
+            }
+            return fetchAPI(selectedDate);
+        }
         default:
             return state;
     }
