@@ -4,7 +4,7 @@ function App({ title, userCount }) {
   return(
     <>
      {/* <FormPage/> */}
-      <BookingPage/>
+      {/* <BookingPage/> */}
     </>
   ) 
 }

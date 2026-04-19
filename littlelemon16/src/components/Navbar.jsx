@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
-    <nav style={{ padding: "10px", borderBottom: "1px solid black" }}>
-      <NavLink to="/" style={{ marginRight: "10px" }}>Home</NavLink>
+    <nav>
+      <NavLink to="/">Home</NavLink>
       <NavLink to="/about">About</NavLink>
+      <NavLink to="/reservation">Reservation</NavLink>
     </nav>
   );
 };
