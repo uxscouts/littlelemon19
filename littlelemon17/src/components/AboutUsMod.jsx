@@ -1,6 +1,10 @@
+import { useRef } from 'react';
+
+
 function AboutUsMod() {
+  const targetRef = useRef(null);
   return (
-<>
+    <>
       <div className="About-Us-Container">
         <section id="About-Us-Section">
           <div className="about-grid-container">
@@ -16,7 +20,7 @@ function AboutUsMod() {
                 o bring those recipes to the masses with a modern twist. 
                 At Little Lemon, you can expect to find a menu full of 
                 classic dishes with a creative twist that makes them stand 
-                out from the rest. W ether you're looking for a quick lunch 
+                out from the rest. Whether you're looking for a quick lunch 
                 or a leisurely dinner, Little Lemon Chicago is the perfect 
                 place to indulge in a delicious meal in a cozy and welcoming 
                 atmosphere.</p>
@@ -30,7 +34,7 @@ function AboutUsMod() {
           </div>
         </section>
       </div>  
-</>
+    </>
   )
 }
 
