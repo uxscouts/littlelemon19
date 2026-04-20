@@ -5,7 +5,7 @@ function AboutUsMod() {
   const targetRef = useRef(null);
   return (
     <>
-      <div className="About-Us-Container">
+      <div className="About-Us-Container" id="about">
         <section id="About-Us-Section">
           <div className="about-grid-container">
             <article className="About-Us-Module">

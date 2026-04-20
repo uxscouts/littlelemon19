@@ -1,6 +1,7 @@
 import { Routes, Route, Outlet } from "react-router-dom";
  //import Navbar from "./components/Navbar";
-import SiteNavbar from "./components/Navbar2";
+// import SiteNavbar from "./components/Navbar2";
+import SiteNavbar from "./components/Navbar3";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Reservation from "./pages/Reservation";
